@@ -1,6 +1,7 @@
 import ArtistForm from './forms/ArtistForm'
 import useFetch from './custom-hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
+import React from 'react'
 
 export default function JoinUs() {
   const { post } = useFetch()

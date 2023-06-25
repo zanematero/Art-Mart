@@ -2,13 +2,32 @@ import ArtistForm from "./forms/ArtistForm"
 import useFetch from "./custom-hooks/useFetch"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import React from "react"
 
 export default function EditArtist() {
   const params = useParams()
 
   const { get, put } = useFetch()
 
-  const [artist, setArtist] = useState({})
+  interface Artist {
+    name: string;
+    phone: string;
+    email: string;
+    image: string;
+    style: string;
+    bio: string;
+  }
+
+  const artistPlaceholder = {
+    name: "",
+    phone: "",
+    email: "",
+    image: "",
+    style: "",
+    bio: ""
+  }
+
+  const [artist, setArtist] = useState<Artist>(artistPlaceholder)
 
   useEffect(() => {
     (async () => {

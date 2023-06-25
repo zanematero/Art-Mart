@@ -3,13 +3,47 @@ import useFetch from './custom-hooks/useFetch';
 import { useContext, useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
+import React from 'react';
 
 export default function ArtworkView() {
-    const { handleCartAdd } = useContext(CartContext)
+    // RETURN HERE
+    const { handleCartAdd }: any = useContext(CartContext)
     const { get, remove } = useFetch()
 
-    const [image, setImage] = useState([])
-    const [artist, setArtist] = useState([])
+    // CONtINUE hERE
+    interface Image {
+        artist: Object;
+        title: string;
+        description: string;
+        size: string;
+        year: Date;
+        style: string;
+        price: number;
+        copies: number;
+        sold: boolean;
+    }
+
+    interface Artist {
+        name: string;
+    }
+
+    const initialArtist = {
+        name: ""
+    }
+
+    const initialImage = {
+        artist: {},
+        title: "",
+        description: "",
+        size: "",
+        year: "",
+        style: "",
+        price: "",
+        copies: "",
+        sold: false
+    }
+    const [image, setImage] = useState<Image>(initialImage)
+    const [artist, setArtist] = useState<Artist>(initialArtist)
 
     const params = useParams()
 
@@ -28,6 +62,7 @@ export default function ArtworkView() {
     }, [])
 
     // This could be avoided with some backend changes, works as a temp fix
+
     useEffect(() => {
         (async () => {
             const artist = await get(`/artists/${image.artist}`)

@@ -1,3 +1,4 @@
+import React from "react";
 import ImageView from "./ImageView";
 import useFetch from "./custom-hooks/useFetch";
 import { useEffect, useState } from "react";
@@ -7,6 +8,12 @@ export default function ArtGallery(){
     const { get } = useFetch()
 
     const [data, setData] = useState([])
+
+    interface ImageType {
+        _id: string;
+    }    
+
+    const initialState = { _id: ""}
 
     useEffect(() => {
         (async () => {const data = await get(`/artworks/`)

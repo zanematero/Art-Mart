@@ -2,6 +2,7 @@ import ArtworkForm from "./forms/ArtworkForm"
 import useFetch from "./custom-hooks/useFetch"
 import { useNavigate, useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
+import React from "react"
 
 export default function EditArtwork() {
   const { get, put } = useFetch()
@@ -10,7 +11,33 @@ export default function EditArtwork() {
 
   const navigate = useNavigate()
 
-  const [artwork, setArtwork] = useState({})
+  interface Artwork {
+    artist: Object
+    title: string,
+    pic: string,
+    description: string,
+    price: number,
+    year: Date,
+    style: string,
+    size: string,
+    sold: boolean,
+    copies: number
+  }
+
+  const artworkPlaceholder = {
+    artist: {},
+    title: "",
+    pic: "",
+    description: "",
+    price: 0,
+    year: "",
+    style: "",
+    size: "",
+    sold: false,
+    copies: 0
+  }
+
+  const [artwork, setArtwork] = useState<Artwork>(artworkPlaceholder)
 
   useEffect(() => {
     (async () => {

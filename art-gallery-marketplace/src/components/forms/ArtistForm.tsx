@@ -2,6 +2,7 @@ import Input from '../ui-kit/Input'
 import TextArea from '../ui-kit/TextArea'
 import useFormHandler from '../custom-hooks/useFormHandler'
 import '../css/new-artist-form.css'
+import React from 'react'
 
 export default function ArtistForm(props) {
   const { legend, onSubmit, formInputs } = props

@@ -2,10 +2,12 @@ import { NavLink } from "react-router-dom"
 import { AiOutlineSearch } from 'react-icons/ai'
 import { CartContext } from "./context/CartContext"
 import { useContext } from "react"
+import React from "react"
 
 
 export default function MainNav() {
-  const { cart } = useContext(CartContext)
+  // RETURN HERE
+  const { cart }: any = useContext(CartContext)
 
   const getClassItem = ({isActive}) => {
     return `nav-link ${isActive ? 'bg-dark text-light' : ''}`

@@ -1,3 +1,4 @@
+import React from "react"
 import CommissionItem from "./CommissionItem"
 import "./css/commissions.css"
 

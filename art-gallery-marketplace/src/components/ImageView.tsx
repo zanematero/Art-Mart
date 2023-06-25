@@ -1,3 +1,4 @@
+import React from 'react';
 import './css/images.css'
 import useFetch from './custom-hooks/useFetch';
 import { useEffect, useState } from 'react';
@@ -5,7 +6,15 @@ import { useEffect, useState } from 'react';
 export default function ImageView({image}) {
     const { get } = useFetch()
 
-    const [artist, setArtist] = useState([])
+    interface Artist {
+        name: string
+    }
+
+    const artistPlaceholder = {
+        name: ""
+    }
+
+    const [artist, setArtist] = useState<Artist>(artistPlaceholder)
 
     useEffect(() => {
         (async () => {

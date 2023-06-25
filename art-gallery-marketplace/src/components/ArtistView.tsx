@@ -1,5 +1,6 @@
 import './css/artistpage.css'
 import ArtCarousel from "./Carousel.js";
+import React from 'react';
 
 
 export default function ArtistView({artist}) {

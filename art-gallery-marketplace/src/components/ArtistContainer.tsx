@@ -3,11 +3,18 @@ import { Link, Outlet } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from './custom-hooks/useFetch';
+import React from "react";
 
 export default function ArtistContainer(){
     const { get } = useFetch()
 
-    const [data, setData] = useState([])
+    interface DataType {
+        _id: string;
+    }    
+
+    const initialState = { _id: ""}
+
+    const [data, setData] = useState<DataType>(initialState)
 
     const params = useParams()
     

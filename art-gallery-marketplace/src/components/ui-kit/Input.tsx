@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Input(props) {
   const { label, className, type, value, onChange, required, ...rest } = props
 

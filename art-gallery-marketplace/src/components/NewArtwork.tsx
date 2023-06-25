@@ -1,6 +1,7 @@
 import ArtworkForm from "./forms/ArtworkForm"
 import useFetch from "./custom-hooks/useFetch"
 import { useNavigate, useParams } from "react-router-dom"
+import React from "react"
 
 export default function NewArtwork() {
   const { post } = useFetch()

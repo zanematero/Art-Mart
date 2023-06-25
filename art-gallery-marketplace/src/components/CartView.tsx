@@ -2,9 +2,11 @@ import { useContext } from 'react'
 import { CartContext } from './context/CartContext'
 import CartItem from './CartItem'
 import './css/cart.css'
+import React from 'react'
 
 export default function CartView() {
-  const { cart } = useContext(CartContext)
+  // RETURN HERE
+  const { cart }: any = useContext(CartContext)
 
   return <div className="cart-container m-2">
     { !cart.length

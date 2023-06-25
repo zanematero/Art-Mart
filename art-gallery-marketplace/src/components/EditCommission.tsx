@@ -1,3 +1,4 @@
+import React from "react";
 import useFetch from "./custom-hooks/useFetch";
 import CommissionForm from "./forms/CommissionForm";
 import { useNavigate, useOutletContext, useParams } from 'react-router-dom'
@@ -9,7 +10,8 @@ export default function EditCommission() {
 
   const params = useParams()
   
-  const { artist } = useOutletContext()
+  // RETURN HERE
+  const { artist }: any = useOutletContext()
 
   const commission = artist
     ? artist.commissions.find(c => c._id === params.commissionId)
