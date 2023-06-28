@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { CartContext } from './context/CartContext';
 import React from 'react';
+import { Artist } from '../types/artist'
 
 export default function ArtworkView() {
     // RETURN HERE
@@ -12,19 +13,16 @@ export default function ArtworkView() {
 
     // CONtINUE hERE
     interface Image {
-        artist: Object;
+        artist: Artist;
         title: string;
         description: string;
         size: string;
-        year: Date;
+        year: number;
         style: string;
         price: number;
         copies: number;
         sold: boolean;
-    }
-
-    interface Artist {
-        name: string;
+        pic: string;
     }
 
     const initialArtist = {
@@ -36,11 +34,12 @@ export default function ArtworkView() {
         title: "",
         description: "",
         size: "",
-        year: "",
+        year: 0,
         style: "",
-        price: "",
-        copies: "",
-        sold: false
+        price: 0,
+        copies: 0,
+        sold: false,
+        pic: ""
     }
     const [image, setImage] = useState<Image>(initialImage)
     const [artist, setArtist] = useState<Artist>(initialArtist)

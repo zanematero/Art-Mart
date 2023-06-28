@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function ArtGallery(){
     const { get } = useFetch()
 
-    const [data, setData] = useState([])
+    const [data, setData] = useState<ImageType[]>([])
 
     interface ImageType {
         _id: string;

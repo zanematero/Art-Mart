@@ -5,7 +5,6 @@ const { Schema } = mongoose;
 const Artwork = require('./artwork.js');
 const Commission = require('./commission.js');
 
-
 // Schema
     const artistSchema = new Schema({
         name: { type: String, required: true },   
