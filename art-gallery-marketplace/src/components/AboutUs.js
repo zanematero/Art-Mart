@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
+import './css/about.css'
 
 export default function AboutUs() {
     return (
         <div className="bg-dark text-secondary">
             <hr></hr>
-            <div className="card" style={{width: "75vw", height:"75vh", margin:"auto"}}>
-                <img src="https://www.aaa.si.edu/sites/default/files/place-easel-side-table-albert-bloch-extra-large.jpg" alt="Card image cap" style={{width:"70%" ,height:"40vh", margin:"auto"}}/>
+            <div className="card" style={{width: "75vw", height:"70vh", margin:"auto"}}>
+                <img className="cardImage" src="https://www.aaa.si.edu/sites/default/files/place-easel-side-table-albert-bloch-extra-large.jpg" alt="Card image cap" style={{margin:"auto"}}/>
                     <div className="card-body">
                         <hr />
                         <h5 className="card-title">About Us:</h5>

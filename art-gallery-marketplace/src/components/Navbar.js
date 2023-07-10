@@ -8,11 +8,11 @@ export default function MainNav() {
   const { cart } = useContext(CartContext)
 
   const getClassItem = ({isActive}) => {
-    return `nav-link ${isActive ? 'bg-dark text-light' : ''}`
+    return `nav-link ${isActive ? 'bg-dark text-light rounded' : ''}`
   }
 
   const getClassBrand = ({isActive}) => {
-    return `navbar-brand nav-link ${isActive ? 'bg-dark text-light' : ''}`
+    return `navbar-brand nav-link ${isActive ? 'bg-dark text-light rounded' : ''}`
   }
 
   return <nav className="navbar navbar-expand bg-light p-2">
